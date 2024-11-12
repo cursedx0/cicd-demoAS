@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mostrar mensaje
-        run: echo "hola github actions"
       - name: Bajar código
         uses: actions/checkout@v4
       - name: probar código
         run: python3 main.py
+      - name: crear imagen docker
+        run: docker build -t ulopeznovoa/holamundo .
+      - name: probar contenedor
+        run: docker run ulopeznovoa/holamundo
