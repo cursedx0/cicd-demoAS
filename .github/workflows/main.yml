@@ -1,6 +1,9 @@
 name: Primer workflow
 
-on: push
+on:
+  push:
+    branches:
+      - nuevafeature
 
 jobs:
   hola_mundo:
@@ -13,6 +16,7 @@ jobs:
         run: python3 main.py
         
   dockerjob:
+    needs: hola_mundo
     runs-on: ubuntu-latest
     steps:
       -
