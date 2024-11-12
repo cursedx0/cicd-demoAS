@@ -9,3 +9,7 @@ jobs:
     steps:
       - name: Mostrar mensaje
         run: echo "hola github actions"
+      - name: Bajar código
+        uses: actions/checkout@v4
+      - name: probar código
+        run: python3 main.py
